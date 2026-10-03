@@ -1,1 +1,60 @@
-<!-- FaceCall -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FaceCall - simple browser video calling">
+    <title>FaceCall</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app-shell">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">PRIVATE VIDEO CALLING</p>
+                <h1>FaceCall</h1>
+            </div>
+            <span id="roomLabel" class="room-badge">No room joined</span>
+        </header>
+
+        <section class="video-grid" aria-label="Video call">
+            <div class="video-card remote-card">
+                <video id="remoteVideo" autoplay playsinline></video>
+                <div class="video-placeholder">Waiting for another person…</div>
+                <span class="video-label">Other person</span>
+            </div>
+
+            <div class="video-card local-card">
+                <video id="localVideo" autoplay muted playsinline></video>
+                <span class="video-label">You</span>
+            </div>
+        </section>
+
+        <section class="control-panel">
+            <div class="room-controls">
+                <label for="roomId">Call room</label>
+                <div class="room-row">
+                    <input id="roomId" type="text" maxlength="20" placeholder="e.g. ABC123" autocomplete="off">
+                    <button id="joinRoom" disabled>Join / Create</button>
+                </div>
+                <p class="help-text">Use the same room code on the other device.</p>
+            </div>
+
+            <div id="status" class="status" role="status">Start your camera to begin.</div>
+
+            <div class="button-row">
+                <button id="startCamera" class="primary">Start Camera</button>
+                <button id="copyLink" disabled>Copy Call Link</button>
+                <button id="muteButton">Mute</button>
+                <button id="cameraButton">Camera Off</button>
+                <button id="hangupButton" class="danger" disabled>End Call</button>
+            </div>
+        </section>
+
+        <p class="footer-note">FaceCall uses WebRTC for the live audio/video connection.</p>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="/app.js"></script>
+</body>
+</html>
