@@ -1,0 +1,27 @@
+{
+  "name": "face-call",
+  "version": "1.0.0",
+  "description": "FaceCall - browser video calling app",
+  "main": "server.js",
+  "scripts": {
+    "dev": "vite",
+    "server": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "video-call",
+    "webrtc",
+    "socket.io"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@mediapipe/tasks-vision": "^1.0.1",
+    "express": "^5.2.1",
+    "socket.io": "^4.8.4"
+  },
+  "devDependencies": {
+    "vite": "^8.3.2"
+  }
+}
